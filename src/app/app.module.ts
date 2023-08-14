@@ -8,6 +8,8 @@ import { HomeComponent } from './MyComponents/home/home.component';
 import { SellerAuthComponent } from './MyComponents/seller-auth/seller-auth.component';
 import { FormsModule } from '@angular/forms';
 import { WebsiteComponent } from './MyComponents/website/website.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SellerHomeComponent } from './Seller/seller-home/seller-home.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { WebsiteComponent } from './MyComponents/website/website.component';
     HeaderComponent,
     HomeComponent,
     SellerAuthComponent,
-    WebsiteComponent
+    WebsiteComponent,
+    SellerHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

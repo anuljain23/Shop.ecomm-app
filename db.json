@@ -1,5 +1,18 @@
 {
-    "seller":[
-        
-    ]
+  "seller": [
+    {
+      "firstName": "Anul",
+      "lastName": "Jain",
+      "email": "anul@seller.shop.com",
+      "password": "abc@123",
+      "id": 1
+    },
+    {
+      "firstName": "Tatvarth",
+      "lastName": "Jain",
+      "email": "tatvarth@seller.shop.com",
+      "password": "abc@123",
+      "id": 2
+    }
+  ]
 }
