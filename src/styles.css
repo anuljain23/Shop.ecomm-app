@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --main-primary-color: #0B3259;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-custom-primary{
+    border-color: var(--main-primary-color);
+    color: var(--main-primary-color);
+}
+.btn-custom-primary:hover,.btn-custom-primary:active,.btn-custom-primary:focus{
+    background-color: var(--main-primary-color);
+    color: white;
+    border-color: var(--main-primary-color);
+}
