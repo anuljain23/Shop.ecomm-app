@@ -1,43 +1,55 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container">
-    <a class="navbar-brand" routerLink="" style="width: 38%;">
+    <a class="navbar-brand" routerLink="">
       <img src="assets/logo.png" alt="Bootstrap" width="140" height="60" />
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" style="justify-content: space-between;" id="navbarSupportedContent">
+    <div [ngSwitch]="menuType">
+      <!-- Switch Case for default menu -->
+      <div *ngSwitchCase="'default'" class="collapse navbar-collapse" style="justify-content: space-between"
+        id="navbarSupportedContent">
         <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-custom-primary" type="submit">Search</button>
         </form>
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="seller-auth">Seller</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cart(0)</a>
-        </li>
-      </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller-auth">Seller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart(0)</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Switch Case for seller menu -->
+      <div *ngSwitchCase="'seller'" class="collapse navbar-collapse" style="justify-content: space-between"
+        id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="seller-product">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller-add-product">Add Product</a>
+          </li>
+          <li class="nav-item">
+            <a role="button" class="nav-link" (click)="logout()">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{sellerFirstName+" "+sellerLastName | uppercase}}</a>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </nav>

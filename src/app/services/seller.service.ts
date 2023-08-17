@@ -26,14 +26,14 @@ export class SellerService {
       .subscribe((result) => {
         this.isSellerSignedIn.next(true);
         localStorage.setItem('seller', JSON.stringify(result.body));
-        this.router.navigate(['seller-home']);
+        this.router.navigate(['seller-product']);
       });
   }
 
   reloadSeller() {
     if (localStorage.getItem('seller')) {
       this.isSellerSignedIn.next(true);
-      this.router.navigate(['seller-home']);
+      this.router.navigate(['seller-product']);
     }
   }
 
@@ -47,7 +47,7 @@ export class SellerService {
         if(result && result.body && result.body.length){
           this.isSellerSignedIn.next(true);
           localStorage.setItem('seller', JSON.stringify(result.body));
-          this.router.navigate(['seller-home']);
+          this.router.navigate(['seller-product']);
         }else{
           this.isSignInError.emit(true)      
         }

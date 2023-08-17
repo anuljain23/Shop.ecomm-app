@@ -9,7 +9,9 @@ import { SellerAuthComponent } from './MyComponents/seller-auth/seller-auth.comp
 import { FormsModule } from '@angular/forms';
 import { WebsiteComponent } from './MyComponents/website/website.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SellerHomeComponent } from './Seller/seller-home/seller-home.component';
+// import { SellerHomeComponent } from './Seller/seller-home/seller-home.component';
+import { SellerAddProductComponent } from './Seller/seller-add-product/seller-add-product.component';
+import { SellerProductsComponent } from './Seller/seller-products/seller-products.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SellerHomeComponent } from './Seller/seller-home/seller-home.component'
     HomeComponent,
     SellerAuthComponent,
     WebsiteComponent,
-    SellerHomeComponent
+    // SellerHomeComponent,
+    SellerAddProductComponent,
+    SellerProductsComponent
   ],
   imports: [
     BrowserModule,
