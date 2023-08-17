@@ -6,6 +6,11 @@
   border-radius: 100%;
 }
 
+span{
+  color: var(--main-primary-color);
+  font-weight: 500;
+}
+
 @media (max-width: 991.98px) {
   .cascading-right {
     margin-right: 0;

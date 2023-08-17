@@ -4,12 +4,13 @@
     <div class="container py-4">
       <div class="row g-0 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="card cascading-right" style="
+          <!-- SignUp Form for seller -->
+          <div *ngIf="!showLogin" class="card cascading-right" style="
               background: hsla(0, 0%, 100%, 0.55);
               backdrop-filter: blur(30px);
               ">
             <div class="card-body p-5 shadow-5 text-center">
-              <h2 class="fw-bold mb-5">Sign Up Now</h2>
+              <h2 class="fw-bold mb-5">Seller Sign Up</h2>
               <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm.value)">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
@@ -49,10 +50,13 @@
   
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-custom-primary btn-block mb-4">
-                  Sign up
+                  Sign Up
                 </button>
   
                 <!-- Register buttons -->
+                <div class="text-center">
+                  <p>Already Have An Account? Click to <span><a role="button" (click)="toggleSiginUpSignIn()">Sing In</a></span></p>
+                </div>
                 <!-- <div class="text-center">
                   <p>or sign up with:</p>
                   <button type="button" class="btn btn-custom-primary btn-floating mx-1" >
@@ -71,6 +75,38 @@
                     <i class="fa fa-github"></i>
                   </button>
                 </div> -->
+              </form>
+            </div>
+          </div>
+          
+          <!-- SignIp Form for seller -->
+          <div *ngIf="showLogin" class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Seller Sign In</h2>
+              <small class="text-danger">{{errorMessage}}</small>
+              <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm.value)">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" ngModel name="email" id="form3Example3" class="form-control" required/>
+                  <label class="form-label" for="form3Example3">Email Address <span class="text-danger">*</span></label>
+                </div>
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" ngModel name="password" id="form3Example4" class="form-control" required/>
+                  <label class="form-label" for="form3Example4">Password <span class="text-danger">*</span></label>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-custom-primary btn-block mb-4">
+                  Sign In
+                </button>
+                
+                <div class="text-center">
+                  <p>Don't Have An Account? Click to <span><a role="button" (click)="toggleSiginUpSignIn()">Sing Up</a></span></p>
+                </div>
               </form>
             </div>
           </div>

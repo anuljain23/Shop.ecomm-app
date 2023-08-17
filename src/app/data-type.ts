@@ -5,3 +5,8 @@ export interface SellerSignUp{
     email:string,
     password:string
 }
+
+export interface SellerSignIn{
+    email:string,
+    password:string
+}
