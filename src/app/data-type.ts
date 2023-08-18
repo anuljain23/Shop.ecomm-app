@@ -17,5 +17,6 @@ export interface Product{
     productColor:string,
     productDescription:string,
     productPrice:number,
-    productImage:string
+    productImage:string,
+    id:number
 }

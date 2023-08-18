@@ -1,12 +1,12 @@
 <div class="container mt-5">
-    <!-- <div *ngIf="addProductSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-        {{addProductSuccess}}
+    <div *ngIf="actionProductMessageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+        {{actionProductMessageSuccess}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <div *ngIf="addProductError" class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{addProductError}}
+    <div *ngIf="actionProductMessageError" class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{actionProductMessageError}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div> -->
+    </div>
     <div class="card shadow-lg rounded">
         <div class="card-header p-3">
             <h5 class="card-title">ALL PRODUCTS</h5>
@@ -21,6 +21,7 @@
                         <th>Color</th>
                         <th>Category</th>
                         <th>Description</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,14 @@
                         </td>
                         <td>{{product.productCategory}}</td>
                         <td>{{product.productDescription}}</td>
+                        <td>
+                            <button (click)="deleteProduct(product.id)" class="btn btn-custom-primary me-2">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                            <button class="btn btn-custom-primary me-2">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
