@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { SellerHomeComponent } from './Seller/seller-home/seller-home.component';
 import { SellerAddProductComponent } from './Seller/seller-add-product/seller-add-product.component';
 import { SellerProductsComponent } from './Seller/seller-products/seller-products.component';
+import { SellerUpdateProductComponent } from './Seller/seller-update-product/seller-update-product.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SellerProductsComponent } from './Seller/seller-products/seller-product
     WebsiteComponent,
     // SellerHomeComponent,
     SellerAddProductComponent,
-    SellerProductsComponent
+    SellerProductsComponent,
+    SellerUpdateProductComponent
   ],
   imports: [
     BrowserModule,

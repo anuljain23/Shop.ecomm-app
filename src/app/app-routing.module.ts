@@ -6,13 +6,15 @@ import { SellerAuthComponent } from './MyComponents/seller-auth/seller-auth.comp
 import { authenticateSellerGuard } from './authenticate-seller.guard';
 import { SellerProductsComponent } from './Seller/seller-products/seller-products.component';
 import { SellerAddProductComponent } from './Seller/seller-add-product/seller-add-product.component';
+import { SellerUpdateProductComponent } from './Seller/seller-update-product/seller-update-product.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"seller-auth",component:SellerAuthComponent},
   // {path:"seller-home",component:SellerHomeComponent,canActivate:[authenticateSellerGuard]}
   {path:"seller-product",component:SellerProductsComponent,canActivate:[authenticateSellerGuard]},
-  {path:"seller-add-product",component:SellerAddProductComponent,canActivate:[authenticateSellerGuard]}
+  {path:"seller-add-product",component:SellerAddProductComponent,canActivate:[authenticateSellerGuard]},
+  {path:"seller-update-product/:id",component:SellerUpdateProductComponent,canActivate:[authenticateSellerGuard]},
 ];
 
 @NgModule({
