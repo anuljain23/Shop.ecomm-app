@@ -10,3 +10,12 @@ export interface SellerSignIn{
     email:string,
     password:string
 }
+
+export interface Product{
+    productName:string,
+    productCategory:string,
+    productColor:string,
+    productDescription:string,
+    productPrice:number,
+    productImage:string
+}

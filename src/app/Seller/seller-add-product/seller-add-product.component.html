@@ -1,1 +1,67 @@
-<p>seller-add-product works!</p>
+<div class="container mt-5">
+    <div *ngIf="addProductSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+        {{addProductSuccess}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="addProductError" class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{addProductError}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="card shadow-lg rounded">
+        <div class="card-header p-3">
+            <h5 class="card-title">ADD PRODUCT</h5>
+        </div>
+        <div class="card-body p-4">
+            <form #addProduct="ngForm" (ngSubmit)="saveProduct(addProduct.value)">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example1">Product Name</label>
+                            <input type="text" id="form6Example1" name="productName" class="form-control" ngModel />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example2">Product Category</label>
+                            <input type="text" id="form6Example2" name="productCategory" ngModel class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example3">Product Price</label>
+                            <input type="number" id="form6Example3" name="productPrice" class="form-control" ngModel />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example4">Product Color</label>
+                            <input type="text" id="form6Example4" name="productColor" ngModel class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Description -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example5">Product Description</label>
+                    <textarea class="form-control" id="form6Example5" name="productDescription" ngModel
+                        rows="4"></textarea>
+                </div>
+
+                <!-- Product Image -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example6">Product Image</label>
+                    <input type="text" id="form6Example6" name="productImage" ngModel class="form-control" />
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" style="float: right;" class="btn btn-custom-primary btn-block mb-4">Add
+                    Product</button>
+            </form>
+        </div>
+    </div>
+</div>

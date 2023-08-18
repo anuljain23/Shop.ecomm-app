@@ -1,1 +1,48 @@
-<p>seller-products works!</p>
+<div class="container mt-5">
+    <!-- <div *ngIf="addProductSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+        {{addProductSuccess}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="addProductError" class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{addProductError}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> -->
+    <div class="card shadow-lg rounded">
+        <div class="card-header p-3">
+            <h5 class="card-title">ALL PRODUCTS</h5>
+        </div>
+        <div class="card-body p-4">
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Color</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productList">
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="{{product.productImage}}" alt="{{product.productImage}}" />
+                            </div>
+                        </td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productPrice}}</td>
+                        <td>
+                            <div style="display: flex;">
+                                <div [ngStyle]="{'background-color':product.productColor,'width':'20px','height':'20px','margin-right':'10px'}" class="rounded-circle"></div>
+                                {{product.productColor}}
+                            </div>
+                        </td>
+                        <td>{{product.productCategory}}</td>
+                        <td>{{product.productDescription}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
