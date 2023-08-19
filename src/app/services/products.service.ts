@@ -32,4 +32,8 @@ export class ProductsService {
     return this.http.put(this.productAPIUrl+'/'+product.id,product);
   }
 
+  popularProducts(){
+    return this.http.get<Product[]>(this.productAPIUrl+'?_limit=3')
+  }
+
 }

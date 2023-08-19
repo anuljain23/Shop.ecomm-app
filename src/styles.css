@@ -7,12 +7,57 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* styles for primary button */
 .btn-custom-primary{
     border-color: var(--main-primary-color);
     color: var(--main-primary-color);
 }
+
 .btn-custom-primary:hover,.btn-custom-primary:active,.btn-custom-primary:focus{
     background-color: var(--main-primary-color);
     color: white;
     border-color: var(--main-primary-color);
 }
+
+.btn-custom-primary-inverse{
+    background-color: var(--main-primary-color);
+    color: white;
+    border-color: var(--main-primary-color);
+}
+
+.btn-custom-primary-inverse:hover,.btn-custom-primary-inverse:active,.btn-custom-primary-inverse:focus{
+    border-color: var(--main-primary-color);
+    color: var(--main-primary-color);
+}
+/* styles for primary button END*/
+
+/* styles for carousel */
+.picsum-img-wrapper{
+    height: 89vh !important;
+    width: 100vw !important;
+}
+
+.picsum-img-wrapper img{
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.carousel-caption{
+    padding: 50px;
+    background-color: black;
+    opacity: 60%;
+    border-radius: 8px;
+}
+
+.carousel-indicators{
+    margin-bottom: 2rem !important;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    background-color: black;
+    opacity: 60%;
+    height: 20vh;
+    width: 1.5vw;
+    border-radius: 5px;
+}
+/* styles for carousel END */
