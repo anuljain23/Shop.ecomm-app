@@ -1,0 +1,35 @@
+<!-- Start Most Popular -->
+<div class="product-area most-popular related-product section">
+    <div class="container">
+        <div class="row m-3">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2>Best Sellers</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="single-product col-sm-3 d-flex align-items-stretch" *ngFor="let item of bestSellerProductList">
+                <div class="product-wrapper shadow-lg">
+                    <img class="product-img" src="{{item.productImage}}" alt="#">
+                    <div class="product-content m-3">
+                        <div>
+                            <div class="product-info">
+                                <h5 class="text-center">{{item.productName}}</h5>
+                                <p class="text-center text-muted">{{item.productDescription}}</p>
+                            </div>
+                            <div class="product-price text-center">
+                                <span>{{item.productPrice}}</span>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="btn btn-custom-info-inverse">View More</button>
+                                <button class="btn btn-custom-secondary-inverse">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Most Popular Area -->

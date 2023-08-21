@@ -1,10 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
     --main-primary-color: #0B3259;
+    --main-info-color:#FFA309;
+    --main-secondary-color:#04B843;
 }
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section{
+    padding: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /* styles for primary button */
@@ -28,6 +36,50 @@ body{
 .btn-custom-primary-inverse:hover,.btn-custom-primary-inverse:active,.btn-custom-primary-inverse:focus{
     border-color: var(--main-primary-color);
     color: var(--main-primary-color);
+}
+
+.btn-custom-info{
+    border-color: var(--main-info-color);
+    color: var(--main-info-color);
+}
+
+.btn-custom-info:hover,.btn-custom-info:active,.btn-custom-info:focus{
+    background-color: var(--main-info-color);
+    color: white;
+    border-color: var(--main-info-color);
+}
+
+.btn-custom-info-inverse{
+    background-color: var(--main-info-color);
+    color: white;
+    border-color: var(--main-info-color);
+}
+
+.btn-custom-info-inverse:hover,.btn-custom-info-inverse:active,.btn-custom-info-inverse:focus{
+    border-color: var(--main-info-color);
+    color: var(--main-info-color);
+}
+
+.btn-custom-secondary{
+    border-color: var(--main-secondary-color);
+    color: var(--main-secondary-color);
+}
+
+.btn-custom-secondary:hover,.btn-custom-secondary:active,.btn-custom-secondary:focus{
+    background-color: var(--main-secondary-color);
+    color: white;
+    border-color: var(--main-secondary-color);
+}
+
+.btn-custom-secondary-inverse{
+    background-color: var(--main-secondary-color);
+    color: white;
+    border-color: var(--main-secondary-color);
+}
+
+.btn-custom-secondary-inverse:hover,.btn-custom-secondary-inverse:active,.btn-custom-secondary-inverse:focus{
+    border-color: var(--main-secondary-color);
+    color: var(--main-secondary-color);
 }
 /* styles for primary button END*/
 

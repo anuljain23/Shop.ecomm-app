@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../data-type';
+import { Product, category } from '../data-type';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -8,9 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class ProductsService {
 
   productAPIUrl: string = 'http://localhost:3000/products';
+  categoryAPIUrl: string = 'http://localhost:3000/category';
 
   //Instance of HttpClient
   constructor(private http:HttpClient) { }
+
+  getCategory(){
+    return this.http.get<category[]>(this.categoryAPIUrl);
+  }
 
   addProduct(data:Product){
     return this.http.post(this.productAPIUrl,data);    
@@ -18,6 +23,10 @@ export class ProductsService {
 
   allProductList(){
     return this.http.get<Product[]>(this.productAPIUrl)
+  }
+
+  allProductBySeller(sellerId:number){
+    return this.http.get<Product[]>(this.productAPIUrl+`?sellerId=${sellerId}`)
   }
 
   getProduct(id:string){
@@ -34,6 +43,10 @@ export class ProductsService {
 
   popularProducts(){
     return this.http.get<Product[]>(this.productAPIUrl+'?_limit=3')
+  }
+
+  bestSellerProducts(){
+    return this.http.get<Product[]>(this.productAPIUrl+'?_limit=8')
   }
 
 }

@@ -14,6 +14,7 @@ import { SellerAddProductComponent } from './Seller/seller-add-product/seller-ad
 import { SellerProductsComponent } from './Seller/seller-products/seller-products.component';
 import { SellerUpdateProductComponent } from './Seller/seller-update-product/seller-update-product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductGalleryComponent } from './MyComponents/UtilsComponents/product-gallery/product-gallery.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     // SellerHomeComponent,
     SellerAddProductComponent,
     SellerProductsComponent,
-    SellerUpdateProductComponent
+    SellerUpdateProductComponent,
+    ProductGalleryComponent
   ],
   imports: [
     BrowserModule,

@@ -12,15 +12,21 @@ export class SellerProductsComponent {
   productList:undefined|Product[]
   actionProductMessageSuccess:string|undefined
   actionProductMessageError:string|undefined
+  sellerId:number = 0
 
   constructor(private product:ProductsService){}
 
   ngOnInit(){
-    this.getAllProductList();
+    if(localStorage.getItem('seller')){
+      let sellerStore = localStorage.getItem('seller');
+      let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+      this.sellerId = sellerData.id;
+    }   
+    this.getAllProductList(this.sellerId);
   }
 
-  getAllProductList(){
-    this.product.allProductList().subscribe((result)=>{
+  getAllProductList(sellerId:number){
+    this.product.allProductBySeller(sellerId).subscribe((result)=>{
       if(result){
         this.productList = result;
       }
@@ -31,7 +37,7 @@ export class SellerProductsComponent {
     this.product.deleteProduct(id).subscribe((result)=>{
       if(result){
         this.actionProductMessageSuccess = "Product Deleted Successfully!"
-        this.getAllProductList();
+        this.getAllProductList(this.sellerId);
       }else{
         this.actionProductMessageError = "Something Went Wrong. Please Try Again!"
       }

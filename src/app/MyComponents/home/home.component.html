@@ -1,4 +1,5 @@
-<ngb-carousel *ngIf="popularProductList">
+<section class="section banner-section">
+<ngb-carousel *ngIf="popularProductList" class="carousel-fade">
 	<ng-template *ngFor="let item of popularProductList" ngbSlide>
 		<div class="picsum-img-wrapper">
 			<img [src]="item.productImage" alt="Random first slide" />
@@ -9,3 +10,7 @@
 		</div>
 	</ng-template>
 </ngb-carousel>
+</section>
+<section class="section bestseller-section">
+<app-product-gallery></app-product-gallery>
+</section>

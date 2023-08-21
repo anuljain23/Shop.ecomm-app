@@ -18,5 +18,11 @@ export interface Product{
     productDescription:string,
     productPrice:number,
     productImage:string,
-    id:number
+    id:number,
+    sellerId:number
+}
+
+export interface category{
+    id:string,
+    name:string
 }
