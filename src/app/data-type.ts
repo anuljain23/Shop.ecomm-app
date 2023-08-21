@@ -24,5 +24,6 @@ export interface Product{
 
 export interface category{
     id:string,
-    name:string
+    name:string,
+    categoryImage:string
 }

@@ -1,0 +1,27 @@
+<!-- Start Most Popular -->
+<div class="product-area most-popular related-product section">
+    <div class="container">
+        <div class="row m-3">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2>Catrgories</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="single-product col-md-6 col-lg-3 d-flex align-items-stretch" *ngFor="let item of categoryList">
+                <div class="category-wrapper shadow-lg">
+                    <img class="category-img" src="{{item.categoryImage}}" alt="#">
+                    <div class="category-content m-3">
+                        <div>
+                            <div class="category-info">
+                                <h5 class="text-center">{{item.name}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Most Popular Area -->

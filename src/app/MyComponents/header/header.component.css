@@ -3,3 +3,38 @@
     margin-right: 15px;
     text-transform: uppercase;
 }
+
+.search-form input{
+    width: 400px;
+}
+
+ul{
+    list-style-type: none !important;
+}
+
+.suggested-product{
+    position: absolute;
+    display: list-item;
+    background-color: #fff;
+    width: 400px;
+    border: 1px solid #ddd;
+    top: 60px;
+    z-index: 10;
+    padding-left: 0;
+}
+
+.suggested-product a li{
+    padding: 7px;
+    padding-left: 13px;
+    list-style-type: none;
+}
+
+.suggested-product a{
+    color: var(--main-primary-color);
+    text-decoration: none;
+}
+
+.suggested-product li:hover{
+    background-color: #ddd;
+    text-decoration: none;
+}

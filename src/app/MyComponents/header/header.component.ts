@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/data-type';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +12,12 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   //Router service to check the url of the current page
   //(in header because it will render in the complete website)
-  constructor(private route:Router){}
+  constructor(private route:Router,private product:ProductsService){}
   
   menuType:string = 'default';
   sellerFirstName:string = '';
   sellerLastName:string = '';
+  searchedProduct:undefined|Product[]
 
   ngOnInit(){
     this.route.events.subscribe((value:any)=>{
@@ -32,6 +35,26 @@ export class HeaderComponent {
         }
       }
     })
+  }
+
+  searchProduct(query:KeyboardEvent){
+    const element  = query.target as HTMLInputElement
+    if(element.value !== ""){
+      this.product.searchProduct(element.value).subscribe((result)=>{
+        if(result){
+          if(result.length > 5){
+            result.length = 5
+          }
+          this.searchedProduct = result
+        }
+      }) 
+    }else{
+      this.hideSearch()
+    }
+  }
+
+  hideSearch(){
+    this.searchedProduct = undefined
   }
 
   logout(){

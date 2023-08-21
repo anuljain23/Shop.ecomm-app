@@ -49,4 +49,8 @@ export class ProductsService {
     return this.http.get<Product[]>(this.productAPIUrl+'?_limit=8')
   }
 
+  searchProduct(query:string){
+    return this.http.get<Product[]>(this.productAPIUrl+`?q=${query}`)
+  }
+
 }

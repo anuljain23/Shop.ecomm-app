@@ -3,18 +3,26 @@
     <a class="navbar-brand" routerLink="">
       <img src="assets/logo.png" alt="Bootstrap" width="140" height="60" />
     </a>
-    <button class="navbar-toggler btn-custom-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler btn-custom-primary" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div [ngSwitch]="menuType">
       <!-- Switch Case for default menu -->
       <div *ngSwitchCase="'default'" class="collapse navbar-collapse" style="justify-content: space-between"
         id="navbarSupportedContent">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <form class="d-flex search-form" role="search">
+          <input class="form-control me-2" (keyup)="searchProduct($event)" (blur)="hideSearch()" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-custom-primary-inverse" type="submit">Search</button>
         </form>
+        <ul class="suggested-product" *ngIf="searchedProduct">
+          <a href="">
+            <li *ngFor="let item of searchedProduct">
+              {{item.productName}}
+            </li>
+          </a>
+        </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="">Home</a>
