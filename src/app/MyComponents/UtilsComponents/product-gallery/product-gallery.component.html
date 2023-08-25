@@ -11,18 +11,22 @@
         <div class="row">
             <div class="single-product col-md-6 col-lg-3 d-flex align-items-stretch" *ngFor="let item of bestSellerProductList">
                 <div class="product-wrapper shadow-lg">
-                    <img class="product-img" src="{{item.productImage}}" alt="#">
+                    <a routerLink="details/{{item.id}}">
+                        <img class="product-img" src="{{item.productImage}}" alt="#">
+                    </a>
                     <div class="product-content m-3">
                         <div>
                             <div class="product-info">
-                                <h5 class="text-center">{{item.productName}}</h5>
+                                <a routerLink="details/{{item.id}}">
+                                    <h5 class="text-center">{{item.productName}}</h5>
+                                </a>
                                 <p class="text-center text-muted">{{item.productDescription}}</p>
                             </div>
                             <div class="product-price text-center">
                                 <span>{{item.productPrice}}</span>
                             </div>
                             <div class="product-buttons">
-                                <button class="btn btn-custom-info-inverse btn-sm m-2">View More</button>
+                                <a routerLink="details/{{item.id}}" role="button" class="btn btn-custom-info-inverse btn-sm m-2">View More</a>
                                 <button class="btn btn-custom-secondary-inverse btn-sm m-2">Buy Now</button>
                             </div>
                         </div>

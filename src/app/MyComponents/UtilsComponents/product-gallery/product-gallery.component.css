@@ -1,3 +1,8 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .product-wrapper{
     margin-bottom: 40px;
     border: 1px solid #ddd;

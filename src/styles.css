@@ -18,68 +18,68 @@ body{
 /* styles for primary button */
 .btn-custom-primary{
     border-color: var(--main-primary-color);
-    color: var(--main-primary-color);
+    color: var(--main-primary-color) !important;
 }
 
 .btn-custom-primary:hover,.btn-custom-primary:active,.btn-custom-primary:focus{
     background-color: var(--main-primary-color);
-    color: white;
+    color: white !important;
     border-color: var(--main-primary-color);
 }
 
 .btn-custom-primary-inverse{
     background-color: var(--main-primary-color);
-    color: white;
+    color: white !important;
     border-color: var(--main-primary-color);
 }
 
 .btn-custom-primary-inverse:hover,.btn-custom-primary-inverse:active,.btn-custom-primary-inverse:focus{
     border-color: var(--main-primary-color);
-    color: var(--main-primary-color);
+    color: var(--main-primary-color) !important;
 }
 
 .btn-custom-info{
     border-color: var(--main-info-color);
-    color: var(--main-info-color);
+    color: var(--main-info-color) !important;
 }
 
 .btn-custom-info:hover,.btn-custom-info:active,.btn-custom-info:focus{
     background-color: var(--main-info-color);
-    color: white;
+    color: white !important;
     border-color: var(--main-info-color);
 }
 
 .btn-custom-info-inverse{
     background-color: var(--main-info-color);
-    color: white;
+    color: white !important;
     border-color: var(--main-info-color);
 }
 
 .btn-custom-info-inverse:hover,.btn-custom-info-inverse:active,.btn-custom-info-inverse:focus{
     border-color: var(--main-info-color);
-    color: var(--main-info-color);
+    color: var(--main-info-color) !important;
 }
 
 .btn-custom-secondary{
     border-color: var(--main-secondary-color);
-    color: var(--main-secondary-color);
+    color: var(--main-secondary-color) !important;
 }
 
 .btn-custom-secondary:hover,.btn-custom-secondary:active,.btn-custom-secondary:focus{
     background-color: var(--main-secondary-color);
-    color: white;
+    color: white !important;
     border-color: var(--main-secondary-color);
 }
 
 .btn-custom-secondary-inverse{
     background-color: var(--main-secondary-color);
-    color: white;
+    color: white !important;
     border-color: var(--main-secondary-color);
 }
 
 .btn-custom-secondary-inverse:hover,.btn-custom-secondary-inverse:active,.btn-custom-secondary-inverse:focus{
     border-color: var(--main-secondary-color);
-    color: var(--main-secondary-color);
+    color: var(--main-secondary-color) !important;
 }
 /* styles for primary button END*/
 

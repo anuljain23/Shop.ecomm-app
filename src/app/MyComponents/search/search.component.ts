@@ -19,11 +19,6 @@ export class SearchComponent {
     query && this.product.searchProduct(query).subscribe((result)=>{
       this.searchedProducts = result
     })
-    if(this.searchedProducts && this.searchedProducts?.length>0){
-      this.ResultFound = true
-    }else{
-      this.ResultFound = false
-    }
   }
 
 }

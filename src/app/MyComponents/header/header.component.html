@@ -13,15 +13,17 @@
       <div *ngSwitchCase="'default'" class="collapse navbar-collapse" style="justify-content: space-between"
         id="navbarSupportedContent">
         <form class="d-flex search-form" role="search">
-          <input class="form-control me-2" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-custom-primary-inverse" (click)="searchButton(searchInput.value)" type="submit">Search</button>
+          <input class="form-control me-2" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"
+            type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-custom-primary-inverse" (click)="searchButton(searchInput.value)"
+            type="submit">Search</button>
         </form>
         <ul class="suggested-product" *ngIf="searchedProduct">
-          <a href="">
-            <li *ngFor="let item of searchedProduct">
+          <li *ngFor="let item of searchedProduct">
+            <a (mousedown)="redirectToDetails(item.id)">
               {{item.productName}}
-            </li>
-          </a>
+            </a>
+          </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">

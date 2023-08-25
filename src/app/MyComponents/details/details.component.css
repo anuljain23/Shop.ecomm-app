@@ -1,0 +1,30 @@
+.image-container{
+    padding: 0;
+}
+
+.color{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid #ddd;
+}
+
+.details{
+    margin: 30px;
+}
+
+.quantity-button-group{
+    margin: 10px 0;
+}
+
+.quantity-button-group input{
+    width: 50px;
+    border-radius: 0;
+    border-color: var(--main-primary-color);
+    border-left: none;
+    border-right: none;
+}
+
+.quantity-button-group .btn{
+    border-radius: 0 !important;
+}

@@ -4,10 +4,12 @@
 		<div class="picsum-img-wrapper">
 			<img [src]="item.productImage" alt="Random first slide" />
 		</div>
-		<div class="carousel-caption">
-			<h3>{{item.productName}}</h3>
-			<p>{{item.productDescription}}</p>
-		</div>
+		<a routerLink="details/{{item.id}}">
+			<div class="carousel-caption">
+				<h3>{{item.productName}}</h3>
+				<p>{{item.productDescription}}</p>
+			</div>
+		</a>
 	</ng-template>
 </ngb-carousel>
 </section>

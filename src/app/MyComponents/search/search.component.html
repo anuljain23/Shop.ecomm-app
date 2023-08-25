@@ -1,31 +1,28 @@
 <!-- Start Most Popular -->
 <div class="search-product section">
     <div class="container">
-        <div *ngIf="ResultFound; else notFound">
-            <div class="row product-wrapper shadow" *ngFor="let item of searchedProducts">
-                <div class="col-md-4 product-img-wrapper">
+        <div class="row product-wrapper shadow" *ngFor="let item of searchedProducts">
+            <div class="col-md-4 product-img-wrapper">
+                <a routerLink="/details/{{item.id}}">
                     <img class="product-img" src="{{item.productImage}}" alt="#">
-                </div>
-                <div class="col-md-8 product-description-wrapper">
-                    <div class="product-info">
+                </a>
+            </div>
+            <div class="col-md-8 product-description-wrapper">
+                <div class="product-info">
+                    <a routerLink="/details/{{item.id}}">
                         <h5 class="text-center">{{item.productName}}</h5>
-                        <p class="text-center text-muted">{{item.productDescription}}</p>
-                    </div>
-                    <div class="product-price text-center">
-                        <span>{{item.productPrice}}</span>
-                    </div>
-                    <div class="product-buttons">
-                        <button class="btn btn-custom-info-inverse m-2">View More</button>
-                        <button class="btn btn-custom-secondary-inverse m-2">Buy Now</button>
-                    </div>
+                    </a>
+                    <p class="text-center text-muted">{{item.productDescription}}</p>
+                </div>
+                <div class="product-price text-center">
+                    <span>{{item.productPrice}}</span>
+                </div>
+                <div class="product-buttons">
+                    <a role="button" routerLink="/details/{{item.id}}" class="btn btn-custom-info-inverse m-2">View More</a>
+                    <button class="btn btn-custom-secondary-inverse m-2">Buy Now</button>
                 </div>
             </div>
         </div>
-        <ng-template #notFound>
-            <div>
-                <p>Sorry! No result available to show</p>
-            </div>
-        </ng-template>
     </div>
 </div>
 <!-- End Most Popular Area -->

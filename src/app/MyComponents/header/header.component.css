@@ -23,13 +23,14 @@ ul{
     padding-left: 0;
 }
 
-.suggested-product a li{
+.suggested-product li{
     padding: 7px;
     padding-left: 13px;
     list-style-type: none;
+    cursor: pointer;
 }
 
-.suggested-product a{
+.suggested-product li a{
     color: var(--main-primary-color);
     text-decoration: none;
 }
