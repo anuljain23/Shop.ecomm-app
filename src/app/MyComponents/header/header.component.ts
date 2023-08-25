@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/data-type';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -12,7 +12,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class HeaderComponent {
   //Router service to check the url of the current page
   //(in header because it will render in the complete website)
-  constructor(private route:Router,private product:ProductsService){}
+  constructor(private route:Router,private product:ProductsService,private activeRoute:ActivatedRoute){}
   
   menuType:string = 'default';
   sellerFirstName:string = '';
@@ -51,6 +51,10 @@ export class HeaderComponent {
     }else{
       this.hideSearch()
     }
+  }
+
+  searchButton(val:string){
+    this.route.navigate([`search/${val}`])
   }
 
   hideSearch(){

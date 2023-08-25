@@ -16,6 +16,8 @@ import { SellerUpdateProductComponent } from './Seller/seller-update-product/sel
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductGalleryComponent } from './MyComponents/UtilsComponents/product-gallery/product-gallery.component';
 import { CategoryGalleryComponent } from './MyComponents/UtilsComponents/category-gallery/category-gallery.component';
+import { SearchComponent } from './MyComponents/search/search.component';
+import { DetailsComponent } from './MyComponents/details/details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CategoryGalleryComponent } from './MyComponents/UtilsComponents/categor
     SellerProductsComponent,
     SellerUpdateProductComponent,
     ProductGalleryComponent,
-    CategoryGalleryComponent
+    CategoryGalleryComponent,
+    SearchComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
