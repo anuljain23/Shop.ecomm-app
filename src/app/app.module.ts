@@ -9,7 +9,6 @@ import { SellerAuthComponent } from './MyComponents/seller-auth/seller-auth.comp
 import { FormsModule } from '@angular/forms';
 import { WebsiteComponent } from './MyComponents/website/website.component';
 import { HttpClientModule } from '@angular/common/http';
-// import { SellerHomeComponent } from './Seller/seller-home/seller-home.component';
 import { SellerAddProductComponent } from './Seller/seller-add-product/seller-add-product.component';
 import { SellerProductsComponent } from './Seller/seller-products/seller-products.component';
 import { SellerUpdateProductComponent } from './Seller/seller-update-product/seller-update-product.component';
@@ -18,6 +17,8 @@ import { ProductGalleryComponent } from './MyComponents/UtilsComponents/product-
 import { CategoryGalleryComponent } from './MyComponents/UtilsComponents/category-gallery/category-gallery.component';
 import { SearchComponent } from './MyComponents/search/search.component';
 import { DetailsComponent } from './MyComponents/details/details.component';
+import { UserAuthComponent } from './MyComponents/user-auth/user-auth.component';
+import { FooterComponent } from './MyComponents/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +27,15 @@ import { DetailsComponent } from './MyComponents/details/details.component';
     HomeComponent,
     SellerAuthComponent,
     WebsiteComponent,
-    // SellerHomeComponent,
     SellerAddProductComponent,
     SellerProductsComponent,
     SellerUpdateProductComponent,
     ProductGalleryComponent,
     CategoryGalleryComponent,
     SearchComponent,
-    DetailsComponent
+    DetailsComponent,
+    UserAuthComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

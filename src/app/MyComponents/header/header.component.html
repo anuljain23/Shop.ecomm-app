@@ -33,7 +33,7 @@
             <a class="nav-link" routerLink="seller-auth">Seller</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" routerLink="user-auth">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Cart(0)</a>
@@ -56,6 +56,41 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">{{sellerFirstName+" "+sellerLastName | uppercase}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Switch Case for user menu -->
+      <div *ngSwitchCase="'user'" class="collapse navbar-collapse" style="justify-content: space-between"
+        id="navbarSupportedContent">
+        <form class="d-flex search-form" role="search">
+          <input class="form-control me-2" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"
+            type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-custom-primary-inverse" (click)="searchButton(searchInput.value)"
+            type="submit">Search</button>
+        </form>
+        <ul class="suggested-product" *ngIf="searchedProduct">
+          <li *ngFor="let item of searchedProduct">
+            <a (mousedown)="redirectToDetails(item.id)">
+              {{item.productName}}
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller-auth">Seller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">{{userName}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="userLogout()">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart(0)</a>
           </li>
         </ul>
       </div>

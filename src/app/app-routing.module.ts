@@ -9,6 +9,7 @@ import { SellerAddProductComponent } from './Seller/seller-add-product/seller-ad
 import { SellerUpdateProductComponent } from './Seller/seller-update-product/seller-update-product.component';
 import { SearchComponent } from './MyComponents/search/search.component';
 import { DetailsComponent } from './MyComponents/details/details.component';
+import { UserAuthComponent } from './MyComponents/user-auth/user-auth.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:"seller-update-product/:id",component:SellerUpdateProductComponent,canActivate:[authenticateSellerGuard]},
   {path:"search/:query",component:SearchComponent},
   {path:"details/:id",component:DetailsComponent},
+  {path:"user-auth",component:UserAuthComponent},
 ];
 
 @NgModule({

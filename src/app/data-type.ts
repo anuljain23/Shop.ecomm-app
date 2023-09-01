@@ -6,6 +6,18 @@ export interface SellerSignUp{
     password:string
 }
 
+export interface UserSignUp{
+    firstName:string,
+    lastName:string,
+    email:string,
+    password:string
+}
+
+export interface UserSignIn{
+    email:string,
+    password:string
+}
+
 export interface SellerSignIn{
     email:string,
     password:string

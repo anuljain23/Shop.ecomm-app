@@ -17,6 +17,7 @@ export class HeaderComponent {
   menuType:string = 'default';
   sellerFirstName:string = '';
   sellerLastName:string = '';
+  userName:string = '';
   searchedProduct:undefined|Product[]
 
   ngOnInit(){
@@ -24,13 +25,18 @@ export class HeaderComponent {
       if(value.url){
         if(localStorage.getItem('seller') && value.url.includes('seller')){
           this.menuType = 'seller';
-          if(localStorage.getItem('seller')){
-            let sellerStore = localStorage.getItem('seller');
-            let sellerData = sellerStore && JSON.parse(sellerStore)[0];
-            this.sellerFirstName = sellerData.firstName;
-            this.sellerLastName = sellerData.lastName;
-          }       
-        }else{
+          let sellerStore = localStorage.getItem('seller');
+          let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+          this.sellerFirstName = sellerData.firstName;
+          this.sellerLastName = sellerData.lastName;
+        }
+        else if(localStorage.getItem('user')){
+          this.menuType = 'user';
+          let userSotre = localStorage.getItem('user')
+          let userData = userSotre && JSON.parse(userSotre);
+          this.userName = userData.userFirstName+' '+userData.userLastName;
+        }
+        else{
           this.menuType = 'default';
         }
       }
@@ -68,6 +74,11 @@ export class HeaderComponent {
   logout(){
     localStorage.removeItem('seller');
     this.route.navigate([''])
+  }
+
+  userLogout(){
+    localStorage.removeItem('user')
+    this.route.navigate(['/user-auth']);
   }
 
 }
