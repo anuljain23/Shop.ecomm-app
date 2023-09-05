@@ -134,29 +134,22 @@
       "userFirstName": "Anul",
       "userLastName": "Jain",
       "userEmail": "anul@user.com",
-      "userPassword": "abc@123",
+      "userPassword": "abc123",
       "id": 1
     },
     {
       "userFirstName": "Tatvarth",
       "userLastName": "Jain",
-      "userEmail": "tatvarth@user.com",
+      "userEmail": "tatv@user.com",
       "userPassword": "abc@123",
       "id": 2
     },
     {
-      "userFirstName": "abcd",
-      "userLastName": "aaa",
-      "userEmail": "abcd@user.com",
-      "userPassword": "abc@123",
+      "userFirstName": "",
+      "userLastName": "",
+      "userEmail": "",
+      "userPassword": "",
       "id": 3
-    },
-    {
-      "userFirstName": "anul",
-      "userLastName": "jain",
-      "userEmail": "anul@user.com",
-      "userPassword": "abc@124",
-      "id": 4
     }
   ]
 }

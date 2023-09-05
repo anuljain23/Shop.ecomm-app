@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserSignUp } from 'src/app/data-type';
+import { UserSignIn, UserSignUp } from 'src/app/data-type';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 export class UserAuthComponent {
 
   showLogin = true;
+  errorMessage:string|undefined
 
   constructor(private user:UserService){}
 
@@ -22,7 +23,11 @@ export class UserAuthComponent {
   }
 
   createUserAccount(data:UserSignUp){
-      this.user.addUser(data)
+      this.user.addUser(data);
+  }
+
+  signInUser(formData:UserSignIn){
+    this.user.userSignIn(formData)
   }
 
 }

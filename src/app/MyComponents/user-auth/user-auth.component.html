@@ -9,41 +9,6 @@
                                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                            <div *ngIf="showLogin" class="card-body p-4 p-lg-5 text-black">
-
-                                <form>
-
-                                    <div class="d-flex align-items-center mb-3 pb-1">
-                                        <img src="assets/logo.png" alt="" width="200px">
-                                    </div>
-
-                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account
-                                    </h5>
-
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example17">Email address</label>
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example27"
-                                            class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example27">Password</label>
-                                    </div>
-
-                                    <div class="pt-1 mb-4">
-                                        <button class="btn btn-custom-primary-inverse" style="width: 100%;"
-                                            type="button">Login</button>
-                                    </div>
-
-                                    <a class="small text-muted" href="#!">Forgot password?</a>
-                                    <p class="mb-5 pb-lg-2" style="color: var(--main-primary-color);">Don't have an
-                                        account? <a (click)="toggleForm()"
-                                            style="color: var(--main-primary-color);">Register here</a></p>
-                                </form>
-
-                            </div>
-
 
                             <div *ngIf="!showLogin" class="card-body p-4 p-lg-5 text-black">
 
@@ -92,6 +57,42 @@
                                 </form>
 
                             </div>
+                            
+                            <div *ngIf="showLogin" class="card-body p-4 p-lg-5 text-black">
+
+                                <form #userSignIn="ngForm" (ngSubmit)="signInUser(userSignIn.value)">
+
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <img src="assets/logo.png" alt="" width="200px">
+                                    </div>
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account
+                                    </h5>
+
+                                    <div class="form-outline mb-2">
+                                        <input type="email" id="form2Example37" name="email" ngModel
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" for="form2Example37">Email address</label>
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <input type="password" id="form2Example47" name="password" ngModel
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" for="form2Example47">Password</label>
+                                    </div>
+
+                                    <div class="pt-1 mb-2">
+                                        <button class="btn btn-custom-primary-inverse" style="width: 100%;"
+                                            type="submit">Sign In</button>
+                                    </div>
+
+                                    <p class="mb-5 pb-lg-2" style="color: var(--main-primary-color);">Already have an
+                                        account? <a (click)="toggleForm()"
+                                            style="color: var(--main-primary-color);">Sign Up</a></p>
+                                </form>
+
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

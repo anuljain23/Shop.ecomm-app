@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { UserSignUp } from '../data-type';
+import { UserSignIn, UserSignUp } from '../data-type';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +10,43 @@ import { Router } from '@angular/router';
 export class UserService {
   
   userAPIUrl: string = 'http://localhost:3000/users';
+  
+  //BehaviorSubject changes its value whenever susbcribed
+  isUserSignedIn = new BehaviorSubject<boolean>(false);
+  
+  //If Singin credentials are invalid emit error
+  isSignInError = new EventEmitter<boolean>(false)
+  
   constructor(private http: HttpClient, private router:Router) {}
 
   addUser(data:UserSignUp){
     // { observe to check the response of the post request }
     return this.http.post(this.userAPIUrl,data,{observe:'response'}).subscribe((result)=>{
-      if(result){
-        localStorage.setItem('user',JSON.stringify(result.body))
-        this.router.navigate(['/'])
-      }
+      this.isUserSignedIn.next(true);
+      localStorage.setItem('user',JSON.stringify(result.body))
+      this.router.navigate(['/'])
     })
   }
 
   reloadUser(){
     if(localStorage.getItem('user')){
+      this.isUserSignedIn.next(true);
       this.router.navigate([''])
     }
+  }
+
+  userSignIn(data: UserSignIn) {
+    this.http
+      .get<UserSignUp[]>(
+        this.userAPIUrl + `?userEmail=${data.email}&userPassword=${data.password}`,
+        { observe: 'response' }
+      )
+      .subscribe((result) => {
+        if(result && result.body){
+          localStorage.setItem('user',JSON.stringify(result.body[0]))
+          this.router.navigate(['/'])
+        }
+      });
   }
 
 }
