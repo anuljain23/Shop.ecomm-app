@@ -28,6 +28,11 @@ export class UserAuthComponent {
 
   signInUser(formData:UserSignIn){
     this.user.userSignIn(formData)
+    this.user.invalidUser.subscribe((result)=>{
+      if(result){
+        this.errorMessage = "Please Eneter Valid Email And Password"
+      }
+    })
   }
 
 }

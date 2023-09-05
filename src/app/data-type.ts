@@ -31,7 +31,8 @@ export interface Product{
     productPrice:number,
     productImage:string,
     id:number,
-    sellerId:number
+    sellerId:number,
+    quantity:undefined | number
 }
 
 export interface category{

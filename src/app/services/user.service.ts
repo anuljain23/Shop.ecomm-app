@@ -15,7 +15,7 @@ export class UserService {
   isUserSignedIn = new BehaviorSubject<boolean>(false);
   
   //If Singin credentials are invalid emit error
-  isSignInError = new EventEmitter<boolean>(false)
+  invalidUser = new EventEmitter<boolean>(true)
   
   constructor(private http: HttpClient, private router:Router) {}
 
@@ -42,9 +42,12 @@ export class UserService {
         { observe: 'response' }
       )
       .subscribe((result) => {
-        if(result && result.body){
+        if(result && result.body?.length){
+          this.invalidUser.emit(false)
           localStorage.setItem('user',JSON.stringify(result.body[0]))
           this.router.navigate(['/'])
+        }else{
+          this.invalidUser.emit(true)
         }
       });
   }

@@ -18,7 +18,8 @@ export class HeaderComponent {
   sellerFirstName:string = '';
   sellerLastName:string = '';
   userName:string = '';
-  searchedProduct:undefined|Product[]
+  searchedProduct:undefined|Product[];
+  cartItems = 0
 
   ngOnInit(){
     this.route.events.subscribe((value:any)=>{
@@ -41,6 +42,18 @@ export class HeaderComponent {
         }
       }
     })
+
+    // get count of local cart on initialization
+    let cartData = localStorage.getItem('localCart')
+    if(cartData){
+      this.cartItems = JSON.parse(cartData).length
+    }
+
+    // update cartItems everytime when we add product to cart
+    this.product.cartData.subscribe((items)=>{
+      this.cartItems = items.length
+    })
+
   }
 
   searchProduct(query:KeyboardEvent){

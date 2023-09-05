@@ -12,6 +12,7 @@ export class DetailsComponent {
 
   productData:Product|undefined
   productQuantity:number = 1
+  
   constructor(private activeRoute:ActivatedRoute,private product:ProductsService){}
 
   ngOnInit(){
@@ -30,6 +31,17 @@ export class DetailsComponent {
       this.productQuantity+=1
     }else if(this.productQuantity > 1 && operation === "minus"){
       this.productQuantity-=1
+    }
+  }
+
+  addToCart(){
+    if(this.productData){
+      this.productData.quantity = this.productQuantity;
+      if(!localStorage.getItem('user')){
+        this.product.addToLocalCart(this.productData);
+      }else{
+        console.log(this.productData);        
+      }
     }
   }
 
