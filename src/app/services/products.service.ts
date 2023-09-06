@@ -61,10 +61,21 @@ export class ProductsService {
       cartData = JSON.parse(locaCart)
       cartData.push(data)
       localStorage.setItem('localCart',JSON.stringify(cartData))
+      this.cartData.emit(cartData)
     }else{
       localStorage.setItem('localCart',JSON.stringify([data]))
+      this.cartData.emit([data])
     }
-    this.cartData.emit(cartData)
+  }
+
+  removeItemFromCart(productId:number){
+    let cartData = localStorage.getItem('localCart')
+    if(cartData){
+      let cartItems:Product[] = JSON.parse(cartData)
+      cartItems = cartItems.filter((item:Product)=>productId !== item.id)
+      localStorage.setItem('localCart',JSON.stringify(cartItems))
+      this.cartData.emit(cartItems)
+    }
   }
 
 }
