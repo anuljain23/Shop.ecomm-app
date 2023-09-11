@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Product, category } from '../data-type';
+import { Cart, Product, category } from '../data-type';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,6 +9,7 @@ export class ProductsService {
 
   productAPIUrl: string = 'http://localhost:3000/products';
   categoryAPIUrl: string = 'http://localhost:3000/category';
+  cartAPIUrl: string = 'http://localhost:3000/cart';
   cartData = new EventEmitter<Product[] | []>()
 
   //Instance of HttpClient
@@ -73,9 +74,17 @@ export class ProductsService {
     if(cartData){
       let cartItems:Product[] = JSON.parse(cartData)
       cartItems = cartItems.filter((item:Product)=>productId !== item.id)
-      localStorage.setItem('localCart',JSON.stringify(cartItems))
+      if(cartItems.length){
+        localStorage.setItem('localCart',JSON.stringify(cartItems))
+      }else{
+        localStorage.removeItem('localCart')
+      }
       this.cartData.emit(cartItems)
     }
+  }
+
+  addToCart(cartData:Cart){
+    return this.http.post(this.cartAPIUrl,cartData);    
   }
 
 }
