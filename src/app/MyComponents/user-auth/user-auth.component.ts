@@ -40,10 +40,10 @@ export class UserAuthComponent {
 
   localCartToRemoteCart(){
     let cartData = localStorage.getItem('localCart')
+    let userData = localStorage.getItem('user')
+    let userId = userData && JSON.parse(userData).id
     if(cartData){
       let cartItemList:Product[] = JSON.parse(cartData)
-      let userData = localStorage.getItem('user')
-      let userId = userData && JSON.parse(userData).id
       cartItemList.forEach((product:Product,index)=>{
         let cart:Cart = {
           ...product,
@@ -63,6 +63,9 @@ export class UserAuthComponent {
         },500)
       }) 
     }
+    setTimeout(()=>{
+      this.product.getCartList(userId); 
+    },2000)
   }
 
 }

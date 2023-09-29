@@ -31,6 +31,17 @@ export class DetailsComponent {
             this.removeFromCart = false
           }
         }
+        let userData = localStorage.getItem('user')
+        if(userData){
+          let userId = userData && JSON.parse(userData).id
+          this.product.getCartList(userId)
+          this.product.cartData.subscribe((result)=>{
+            let item = result.filter((item:Product)=>productId === item.productId?.toString())
+            if(item.length){
+              this.removeFromCart = true
+            }            
+          })
+        }
       }else{
         this.productData = undefined
         // if product not found redirect to 404 not found page
@@ -65,6 +76,8 @@ export class DetailsComponent {
         this.product.addToCart(cartData).subscribe((result)=>{
           if(result){
             alert(this.productData?.productName+" has been added to the cart!")
+            this.product.getCartList(userId)
+            this.removeFromCart = true
           }
         })    
       }

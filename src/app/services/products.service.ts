@@ -87,4 +87,13 @@ export class ProductsService {
     return this.http.post(this.cartAPIUrl,cartData);    
   }
 
+  getCartList(userId:number){
+    return this.http.get<Product[]>(this.cartAPIUrl+"?userId="+userId,
+      {observe:'response'}).subscribe((result)=>{
+        if(result && result.body){     
+          this.cartData.emit(result.body)
+        }
+      })
+  }
+
 }

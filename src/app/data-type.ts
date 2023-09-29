@@ -32,7 +32,8 @@ export interface Product{
     productImage:string,
     id:number,
     sellerId:number,
-    quantity:undefined | number
+    quantity:undefined | number,
+    productId:undefined | number
 }
 
 export interface Cart{
