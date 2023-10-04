@@ -36,6 +36,7 @@ export class HeaderComponent {
           let userSotre = localStorage.getItem('user')
           let userData = userSotre && JSON.parse(userSotre);
           this.userName = userData.userFirstName+' '+userData.userLastName;
+          this.product.getCartList(userData.id)
         }
         else{
           this.menuType = 'default';

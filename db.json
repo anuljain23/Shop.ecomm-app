@@ -131,19 +131,6 @@
   ],
   "cart": [
     {
-      "productName": "iPhone 14",
-      "productCategory": "Mobile Phones",
-      "productPrice": "69999",
-      "productColor": "Silver",
-      "productDescription": "Apple iPhone 14 128 GB (Blue, 6 GB RAM)",
-      "sellerId": 1,
-      "productImage": "https://pemmzchannel.com/wp-content/uploads/2022/11/3hmjey3smgacfzpjmakliwjpg-20220911035700.jpeg",
-      "quantity": 2,
-      "userId": 1,
-      "productId": 1,
-      "id": 1
-    },
-    {
       "productName": "T-Shirt",
       "productCategory": "Mens Clothing",
       "productPrice": 599,

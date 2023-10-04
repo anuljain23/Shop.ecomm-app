@@ -96,4 +96,8 @@ export class ProductsService {
       })
   }
 
+  removeFromCartRemote(cartId:number){
+    return this.http.delete(this.cartAPIUrl+"/"+cartId);    
+  }
+
 }

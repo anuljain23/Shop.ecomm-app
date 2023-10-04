@@ -12,7 +12,8 @@ export class DetailsComponent {
 
   productData:Product|undefined
   productQuantity:number = 1
-  removeFromCart = false;
+  removeFromCart = false
+  cartItem:Product|undefined
   
   constructor(private activeRoute:ActivatedRoute,private product:ProductsService){}
 
@@ -38,6 +39,7 @@ export class DetailsComponent {
           this.product.cartData.subscribe((result)=>{
             let item = result.filter((item:Product)=>productId === item.productId?.toString())
             if(item.length){
+              this.cartItem = item[0]
               this.removeFromCart = true
             }            
           })
@@ -75,7 +77,6 @@ export class DetailsComponent {
         delete cartData.id;
         this.product.addToCart(cartData).subscribe((result)=>{
           if(result){
-            alert(this.productData?.productName+" has been added to the cart!")
             this.product.getCartList(userId)
             this.removeFromCart = true
           }
@@ -85,8 +86,20 @@ export class DetailsComponent {
   }
 
   removeItemFromCart(productId:number){
-    this.product.removeItemFromCart(productId)
-    this.removeFromCart = false
+    if(!localStorage.getItem('user')){
+      this.product.removeItemFromCart(productId)
+      this.removeFromCart = false
+    }else{
+      let userData = localStorage.getItem('user')
+      let userId = userData && JSON.parse(userData).id
+      this.cartItem && this.product.removeFromCartRemote(this.cartItem.id)
+      .subscribe((result)=>{
+        if(result){
+          this.product.getCartList(userId)
+          this.removeFromCart = false
+        }
+      })
+    }
   }
 
 }
