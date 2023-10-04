@@ -10,6 +10,7 @@ import { SellerUpdateProductComponent } from './Seller/seller-update-product/sel
 import { SearchComponent } from './MyComponents/search/search.component';
 import { DetailsComponent } from './MyComponents/details/details.component';
 import { UserAuthComponent } from './MyComponents/user-auth/user-auth.component';
+import { CartPageComponent } from './MyComponents/cart-page/cart-page.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:"search/:query",component:SearchComponent},
   {path:"details/:id",component:DetailsComponent},
   {path:"user-auth",component:UserAuthComponent},
+  {path:"cart-page",component:CartPageComponent},
 ];
 
 @NgModule({

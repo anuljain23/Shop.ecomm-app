@@ -19,6 +19,7 @@ import { SearchComponent } from './MyComponents/search/search.component';
 import { DetailsComponent } from './MyComponents/details/details.component';
 import { UserAuthComponent } from './MyComponents/user-auth/user-auth.component';
 import { FooterComponent } from './MyComponents/footer/footer.component';
+import { CartPageComponent } from './MyComponents/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FooterComponent } from './MyComponents/footer/footer.component';
     DetailsComponent,
     UserAuthComponent,
     FooterComponent,
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -131,19 +131,6 @@
   ],
   "cart": [
     {
-      "productName": "T-Shirt",
-      "productCategory": "Mens Clothing",
-      "productPrice": 599,
-      "productColor": "Green",
-      "productDescription": "Tom And Jerry: Thinking Tom",
-      "productImage": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1687842433_3385347.jpg?w=480&dpr=1.3",
-      "sellerId": 1,
-      "quantity": 5,
-      "userId": 1,
-      "productId": 4,
-      "id": 2
-    },
-    {
       "productName": "WOAKERS",
       "productCategory": "Shoes",
       "productPrice": 840,
@@ -194,6 +181,32 @@
       "userId": 1,
       "productId": 6,
       "id": 6
+    },
+    {
+      "productName": "iPhone 14",
+      "productCategory": "Mobile Phones",
+      "productPrice": "69999",
+      "productColor": "Silver",
+      "productDescription": "Apple iPhone 14 128 GB (Blue, 6 GB RAM)",
+      "sellerId": 1,
+      "productImage": "https://pemmzchannel.com/wp-content/uploads/2022/11/3hmjey3smgacfzpjmakliwjpg-20220911035700.jpeg",
+      "quantity": 4,
+      "userId": 1,
+      "productId": 1,
+      "id": 7
+    },
+    {
+      "productName": "Galaxy F34 5G",
+      "productCategory": "Mobile Phones",
+      "productPrice": "24499",
+      "productColor": "Green",
+      "productDescription": "Galaxy F34 5G (64GB RAM)",
+      "sellerId": 1,
+      "productImage": "https://www.dgl.ru/wp-content/uploads/2023/07/dm0.jpg",
+      "quantity": 2,
+      "userId": 1,
+      "productId": 2,
+      "id": 8
     }
   ],
   "users": [
