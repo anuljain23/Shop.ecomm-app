@@ -100,4 +100,10 @@ export class ProductsService {
     return this.http.delete(this.cartAPIUrl+"/"+cartId);    
   }
 
+  currentCart(){    
+    let userSotre = localStorage.getItem('user');
+    let userData = userSotre && JSON.parse(userSotre);
+    return this.http.get<Cart[]>(this.cartAPIUrl+`?userId=${userData.id}`)
+  }
+
 }

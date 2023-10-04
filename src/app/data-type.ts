@@ -55,3 +55,11 @@ export interface category{
     name:string,
     categoryImage:string
 }
+
+export interface priceSummary{
+    price:number,
+    tax:number,
+    discount:number,
+    delivery:number
+    total:number
+}

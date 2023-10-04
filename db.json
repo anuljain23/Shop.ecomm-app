@@ -144,45 +144,6 @@
       "id": 3
     },
     {
-      "productName": "Galaxy F34 5G",
-      "productCategory": "Mobile Phones",
-      "productPrice": "24499",
-      "productColor": "Green",
-      "productDescription": "Galaxy F34 5G (64GB RAM)",
-      "sellerId": 1,
-      "productImage": "https://www.dgl.ru/wp-content/uploads/2023/07/dm0.jpg",
-      "quantity": 1,
-      "userId": 1,
-      "productId": 2,
-      "id": 4
-    },
-    {
-      "productName": "WOAKERS",
-      "productCategory": "Shoes",
-      "productPrice": 840,
-      "productColor": "white",
-      "productDescription": "WOAKERS Printed Lace-Up Shoes\n",
-      "productImage": "https://assets.ajio.com/medias/sys_master/root/20230519/p8Gf/6466809742f9e729d799ae4b/-473Wx593H-466165729-multi-MODEL.jpg",
-      "sellerId": 2,
-      "quantity": 1,
-      "userId": 1,
-      "productId": 7,
-      "id": 5
-    },
-    {
-      "productName": "Fila Shoes",
-      "productCategory": "Shoes",
-      "productPrice": 2200,
-      "productColor": "Black",
-      "productDescription": "Morimo Men's Sneaker",
-      "productImage": "https://fila.co.in/media/catalog/product/cache/274c04d22a7b28db321c499b6be61cc2/1/1/11009394_blk_1.jpg",
-      "sellerId": 2,
-      "quantity": 1,
-      "userId": 1,
-      "productId": 6,
-      "id": 6
-    },
-    {
       "productName": "iPhone 14",
       "productCategory": "Mobile Phones",
       "productPrice": "69999",
@@ -190,23 +151,10 @@
       "productDescription": "Apple iPhone 14 128 GB (Blue, 6 GB RAM)",
       "sellerId": 1,
       "productImage": "https://pemmzchannel.com/wp-content/uploads/2022/11/3hmjey3smgacfzpjmakliwjpg-20220911035700.jpeg",
-      "quantity": 4,
-      "userId": 1,
+      "quantity": 1,
+      "userId": 2,
       "productId": 1,
-      "id": 7
-    },
-    {
-      "productName": "Galaxy F34 5G",
-      "productCategory": "Mobile Phones",
-      "productPrice": "24499",
-      "productColor": "Green",
-      "productDescription": "Galaxy F34 5G (64GB RAM)",
-      "sellerId": 1,
-      "productImage": "https://www.dgl.ru/wp-content/uploads/2023/07/dm0.jpg",
-      "quantity": 2,
-      "userId": 1,
-      "productId": 2,
-      "id": 8
+      "id": 9
     }
   ],
   "users": [
