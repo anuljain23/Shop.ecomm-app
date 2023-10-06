@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Cart, Product, category } from '../data-type';
+import { Cart, Product, category, orders } from '../data-type';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,6 +10,7 @@ export class ProductsService {
   productAPIUrl: string = 'http://localhost:3000/products';
   categoryAPIUrl: string = 'http://localhost:3000/category';
   cartAPIUrl: string = 'http://localhost:3000/cart';
+  ordersAPIUrl: string = 'http://localhost:3000/orders';
   cartData = new EventEmitter<Product[] | []>()
 
   //Instance of HttpClient
@@ -104,6 +105,10 @@ export class ProductsService {
     let userSotre = localStorage.getItem('user');
     let userData = userSotre && JSON.parse(userSotre);
     return this.http.get<Cart[]>(this.cartAPIUrl+`?userId=${userData.id}`)
+  }
+
+  orderNow(data:orders){
+    return this.http.post(this.ordersAPIUrl,data);    
   }
 
 }

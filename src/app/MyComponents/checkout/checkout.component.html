@@ -2,7 +2,10 @@
     <!-- Start Most Popular -->
     <div class="product-area most-popular related-product section">
         <div class="container">
-            <form #orderNow="ngForm">
+            <form #orderNowForm="ngForm" (ngSubmit)="orderNow(orderNowForm.value)">
+                <div *ngIf="orderMsg" class="alert alert-success" role="alert">
+                    {{orderMsg}}
+                  </div>
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="section-title mb-3">
@@ -33,7 +36,7 @@
                                     <input type="email" id="form2Example47" name="contact" ngModel
                                         class="form-control form-control-lg" />
                                 </div>
-                                
+
                                 <div class="form-outline mb-2">
                                     <div class="col">
                                         <label class="form-label" for="form2Example57">Shipping Address</label>
@@ -55,31 +58,30 @@
                                     <div class="col">
                                         <label class="form-label" for="form2Example67">Mode Of Payment</label>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="modeOfPayment" id="radio1" checked/>
+                                            <input class="form-check-input" type="radio" value="Pay On Delivery" name="modeOfPayment" ngModel
+                                                id="radio1" checked />
                                             <label class="form-check-label" for="radio1"> Pay On Delivery </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio2"/>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="modeOfPayment" value="Net Banking" ngModel
+                                                id="radio2" />
                                             <label class="form-check-label" for="radio2"> Net Banking </label>
-                                          </div>
-                                          <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="modeOfPayment" id="radio3"/>
-                                              <label class="form-check-label" for="radio3"> UPI </label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio4"/>
-                                              <label class="form-check-label" for="radio4"> Net Banking </label>
-                                            </div>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="modeOfPayment" value="UPI" ngModel
+                                                id="radio3" />
+                                            <label class="form-check-label" for="radio3"> UPI </label>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <ul class="summary-list">
-                                    <li><strong>Cart Value:</strong><span>&#8377;111/-</span></li>
-                                    <li><strong>GST:</strong><span>&#8377;111/-</span></li>
-                                    <li><strong>Delivery:</strong><span>&#8377;111/-</span></li>
-                                    <li><strong>Discount:</strong><span>-&#8377;111/-</span></li>
+                                    <li><strong>Cart Value:</strong><span>&#8377;{{priceSummary.price}}/-</span></li>
+                                    <li><strong>GST:</strong><span>&#8377;{{priceSummary.tax}}/-</span></li>
+                                    <li><strong>Delivery:</strong><span>&#8377;{{priceSummary.delivery}}/-</span></li>
+                                    <li><strong>Discount:</strong><span>-&#8377;{{priceSummary.discount}}/-</span></li>
                                     <hr>
-                                    <li><strong>Total Amount:</strong><strong>&#8377;111/-</strong></li>
+                                    <li><strong>Total Amount:</strong><strong>&#8377;{{priceSummary.total}}/-</strong></li>
                                     <button class="btn btn-custom-primary-inverse btn-sm mt-3 mb-2">Order Now</button>
                                 </ul>
                             </div>

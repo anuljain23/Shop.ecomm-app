@@ -63,3 +63,23 @@ export interface priceSummary{
     delivery:number
     total:number
 }
+
+export interface orders{
+    firstName:string,
+    lastName:string,
+    email:string,
+    contact:string,
+    address:string,
+    userId:number,
+    modeOfPayment:string,
+    productName:string,
+    productCategory:string,
+    productColor:string,
+    productDescription:string,
+    productPrice:number,
+    productImage:string,
+    id:number | undefined,
+    productId:number,
+    sellerId:number,
+    quantity:undefined | number
+}

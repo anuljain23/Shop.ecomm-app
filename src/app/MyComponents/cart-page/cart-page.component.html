@@ -47,7 +47,7 @@
                                 <li><strong>Discount:</strong><span>-&#8377;{{priceSummary.discount}}/-</span></li>
                                 <hr>
                                 <li><strong>Total Amount:</strong><strong>&#8377;{{priceSummary.total}}/-</strong></li>
-                                <button class="btn btn-custom-primary-inverse btn-sm mt-3 mb-2" (click)="checkout()">Checkout Now</button>
+                                <button *ngIf="priceSummary.total" class="btn btn-custom-primary-inverse btn-sm mt-3 mb-2" (click)="checkout()">Checkout Now</button>
                             </ul>
                         </div>
                     </div>
