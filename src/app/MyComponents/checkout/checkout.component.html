@@ -1,0 +1,93 @@
+<section class="cart-page-section">
+    <!-- Start Most Popular -->
+    <div class="product-area most-popular related-product section">
+        <div class="container">
+            <form #orderNow="ngForm">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="section-title mb-3">
+                            <h4>Billing Detais</h4>
+                        </div>
+                        <div class="single-product">
+                            <div class="product-wrapper shadow mb-2 p-3">
+                                <div class="form-outline mb-2 row">
+                                    <div class="col">
+                                        <label class="form-label" for="form2Example17">First Name</label>
+                                        <input type="text" id="form2Example17" name="firstName" ngModel
+                                            class="form-control form-control-lg" />
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label" for="form2Example27">Last Name</label>
+                                        <input type="text" id="form2Example27" name="lastName" ngModel
+                                            class="form-control form-control-lg" />
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-2">
+                                    <label class="form-label" for="form2Example37">Email address</label>
+                                    <input type="email" id="form2Example37" name="email" ngModel
+                                        class="form-control form-control-lg" />
+                                </div>
+                                <div class="form-outline mb-2">
+                                    <label class="form-label" for="form2Example47">Contact</label>
+                                    <input type="email" id="form2Example47" name="contact" ngModel
+                                        class="form-control form-control-lg" />
+                                </div>
+                                
+                                <div class="form-outline mb-2">
+                                    <div class="col">
+                                        <label class="form-label" for="form2Example57">Shipping Address</label>
+                                        <textarea id="form2Example57" name="address" ngModel
+                                            class="form-control form-control-lg">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="section-title mb-3">
+                            <h4>Payment Details</h4>
+                        </div>
+                        <div class="single-product">
+                            <div class="product-wrapper shadow mb-2">
+                                <div class="form-outline mb-2 p-3">
+                                    <div class="col">
+                                        <label class="form-label" for="form2Example67">Mode Of Payment</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="modeOfPayment" id="radio1" checked/>
+                                            <label class="form-check-label" for="radio1"> Pay On Delivery </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio2"/>
+                                            <label class="form-check-label" for="radio2"> Net Banking </label>
+                                          </div>
+                                          <div class="form-check">
+                                              <input class="form-check-input" type="radio" name="modeOfPayment" id="radio3"/>
+                                              <label class="form-check-label" for="radio3"> UPI </label>
+                                            </div>
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio4"/>
+                                              <label class="form-check-label" for="radio4"> Net Banking </label>
+                                            </div>
+                                    </div>
+                                </div>
+
+                                <ul class="summary-list">
+                                    <li><strong>Cart Value:</strong><span>&#8377;111/-</span></li>
+                                    <li><strong>GST:</strong><span>&#8377;111/-</span></li>
+                                    <li><strong>Delivery:</strong><span>&#8377;111/-</span></li>
+                                    <li><strong>Discount:</strong><span>-&#8377;111/-</span></li>
+                                    <hr>
+                                    <li><strong>Total Amount:</strong><strong>&#8377;111/-</strong></li>
+                                    <button class="btn btn-custom-primary-inverse btn-sm mt-3 mb-2">Order Now</button>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Most Popular Area -->
+</section>

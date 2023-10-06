@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart, priceSummary } from 'src/app/data-type';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -20,7 +21,7 @@ export class CartPageComponent {
     total:0
   }
 
-  constructor(private product:ProductsService){}
+  constructor(private product:ProductsService, private router:Router){}
 
   ngOnInit() {
 
@@ -70,4 +71,14 @@ export class CartPageComponent {
         }
     }    
   }
+
+  checkout(){
+    if(localStorage.getItem('user')) {      
+      this.router.navigate(["/checkout"])
+    }else{
+      alert("Please Login To Checkout!")
+      this.router.navigate(["/user-auth"])
+    }
+  }
+
 }

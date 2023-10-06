@@ -12,6 +12,7 @@ export class UserAuthComponent {
 
   showLogin = true;
   errorMessage:string|undefined
+  currentCartList:Cart[]|undefined
 
   constructor(private user:UserService, private product:ProductsService){}
 
