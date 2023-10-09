@@ -69,16 +69,6 @@
       "id": 1
     },
     {
-      "productName": "Galaxy F34 5G",
-      "productCategory": "Mobile Phones",
-      "productPrice": "24499",
-      "productColor": "Green",
-      "productDescription": "Galaxy F34 5G (64GB RAM)",
-      "sellerId": 1,
-      "productImage": "https://www.dgl.ru/wp-content/uploads/2023/07/dm0.jpg",
-      "id": 2
-    },
-    {
       "productName": "MacBook Pro",
       "productCategory": "Laptops",
       "productPrice": "129999",
@@ -177,20 +167,20 @@
       "firstName": "Anul",
       "lastName": "Jain",
       "email": "anul@user.com",
-      "contact": "9039980341",
-      "address": "Hi link City",
-      "modeOfPayment": "UPI",
-      "productName": "Galaxy F34 5G",
+      "contact": "2222222222",
+      "address": "abcd",
+      "modeOfPayment": "Pay On Delivery",
+      "productName": "iPhone 14",
       "productCategory": "Mobile Phones",
-      "productPrice": "24499",
-      "productColor": "Green",
-      "productDescription": "Galaxy F34 5G (64GB RAM)",
+      "productPrice": "69999",
+      "productColor": "Silver",
+      "productDescription": "Apple iPhone 14 128 GB (Blue, 6 GB RAM)",
       "sellerId": 1,
-      "productImage": "https://www.dgl.ru/wp-content/uploads/2023/07/dm0.jpg",
+      "productImage": "https://pemmzchannel.com/wp-content/uploads/2022/11/3hmjey3smgacfzpjmakliwjpg-20220911035700.jpeg",
       "quantity": 1,
       "userId": 1,
-      "productId": 2,
-      "id": 5
+      "productId": 1,
+      "id": 6
     }
   ]
 }
