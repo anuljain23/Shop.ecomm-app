@@ -1,0 +1,23 @@
+.cart-product-img{
+    width: 150px;
+    height: 150px;
+}
+.product-list{
+    margin: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+}
+.summary-list{
+    margin: 0;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 10px 18px;
+}
+.summary-list li{
+    display: flex;
+    justify-content: space-between;
+}

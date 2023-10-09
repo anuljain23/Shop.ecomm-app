@@ -111,4 +111,10 @@ export class ProductsService {
     return this.http.post(this.ordersAPIUrl,data);    
   }
 
+  orderList(){
+    let userSotre = localStorage.getItem('user');
+    let userData = userSotre && JSON.parse(userSotre);
+    return this.http.get<orders[]>(this.ordersAPIUrl+`?userId=${userData.id}`)
+  }
+
 }
