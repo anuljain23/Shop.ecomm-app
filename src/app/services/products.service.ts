@@ -117,4 +117,8 @@ export class ProductsService {
     return this.http.get<orders[]>(this.ordersAPIUrl+`?userId=${userData.id}`)
   }
 
+  cancelOrder(orderId:number){
+    return this.http.delete(this.ordersAPIUrl+"/"+orderId)
+  }
+
 }

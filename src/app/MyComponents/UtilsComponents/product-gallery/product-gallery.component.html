@@ -23,11 +23,11 @@
                                 <p class="text-center text-muted">{{item.productDescription}}</p>
                             </div>
                             <div class="product-price text-center">
-                                <span>{{item.productPrice}}</span>
+                                <span>&#8377;{{item.productPrice}}/-</span>
                             </div>
                             <div class="product-buttons">
                                 <a routerLink="details/{{item.id}}" role="button" class="btn btn-custom-info-inverse btn-sm m-2">View More</a>
-                                <button class="btn btn-custom-secondary-inverse btn-sm m-2">Buy Now</button>
+                                <button class="btn btn-custom-secondary-inverse btn-sm m-2" (click)="buyNow(item)">Buy Now</button>
                             </div>
                         </div>
                     </div>

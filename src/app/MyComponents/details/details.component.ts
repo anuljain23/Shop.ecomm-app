@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cart, Product } from 'src/app/data-type';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -15,7 +15,7 @@ export class DetailsComponent {
   removeFromCart = false
   cartItem:Product|undefined
   
-  constructor(private activeRoute:ActivatedRoute,private product:ProductsService){}
+  constructor(private activeRoute:ActivatedRoute,private product:ProductsService, private router:Router){}
 
   ngOnInit(){
     let productId = this.activeRoute.snapshot.paramMap.get('id')
@@ -83,6 +83,11 @@ export class DetailsComponent {
         })    
       }
     }
+  }
+
+  buyNow(){
+    this.addToCart()
+    this.router.navigate(['/checkout'])
   }
 
   removeItemFromCart(productId:number){

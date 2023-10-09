@@ -15,6 +15,16 @@ export class MyOrdersComponent {
   constructor(private product:ProductsService){}
 
   ngOnInit() {
+    this.getOrderList()
+  }
+
+  calncelOrder(orderId:number|undefined){
+    orderId && this.product.cancelOrder(orderId).subscribe((result)=>{
+      this.getOrderList()
+    })
+  }
+
+  getOrderList(){
     this.product.orderList().subscribe((result)=>{
       this.myOrders=result
       this.orderItems = result.length

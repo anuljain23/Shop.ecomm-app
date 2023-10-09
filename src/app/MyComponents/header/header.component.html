@@ -80,17 +80,20 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="">Home</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="seller-auth">Seller</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link">{{userName}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" (click)="userLogout()">Logout</a>
-          </li>
+            <a class="nav-link" routerLink="my-orders">My Orders</a>
+          </li> 
           <li class="nav-item">
             <a class="nav-link" routerLink="cart-page">Cart({{cartItems}})</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="userLogout()">Logout</a>
           </li>
         </ul>
       </div>

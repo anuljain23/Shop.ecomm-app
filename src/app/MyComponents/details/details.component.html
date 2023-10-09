@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-6 details">
                 <h1>{{productData.productName}}</h1>
-                <h5 class="text-muted">Price : {{productData.productPrice}}</h5>
+                <h5 class="text-muted">Price : &#8377;{{productData.productPrice}}/-</h5>
                 <p>{{productData.productDescription}}</p>
                 <h6 class="text-muted">Category : {{productData.productCategory}}</h6>
                 <span class="span-color">Color :</span>
@@ -19,7 +19,7 @@
                 <div class="buy-button-group">
                     <a *ngIf="removeFromCart" role="button" (click)="removeItemFromCart(productData.id)" class="btn btn-custom-info-inverse me-2 mt-1">Remove From Cart</a>
                     <a *ngIf="!removeFromCart" role="button" (click)="addToCart()" class="btn btn-custom-info-inverse me-2 mt-1">Add To Cart</a>
-                    <a role="button" class="btn btn-custom-secondary-inverse">Buy Now</a>
+                    <a role="button" class="btn btn-custom-secondary-inverse" (click)="buyNow()">Buy Now</a>
                 </div>
             </div>
         </div>

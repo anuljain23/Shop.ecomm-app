@@ -7,6 +7,9 @@
                     <div class="section-title mb-3">
                         <h4>My Orders({{ orderItems }})</h4>
                     </div>
+                    <div *ngIf="orderItems === 0">
+                        <h6>You have no orders to display!</h6>
+                    </div>
                     <div class="single-product" *ngFor="let item of myOrders">
                         <div class="product-wrapper shadow mb-2">
                             <ul class="product-list">
@@ -28,7 +31,7 @@
                                 <li><span class="text-muted">Quantity:</span><br><span>{{item.quantity}}</span></li>
                                 <li><span class="text-muted">Order Status:</span><br><span>In Progress</span></li>
                                 <li>
-                                    <button class="btn btn-custom-info-inverse btn-sm m-2">
+                                    <button class="btn btn-custom-info-inverse btn-sm m-2" (click)="calncelOrder(item.id)">
                                         Cancel Order
                                     </button>
                                 </li>

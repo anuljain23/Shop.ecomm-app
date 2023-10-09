@@ -12,7 +12,6 @@ export class CartPageComponent {
 
   cartItems = 0;
   currentCartData:Cart[]|undefined
-  delivery=0
   priceSummary:priceSummary = {
     price:0,
     tax:0,
@@ -24,11 +23,40 @@ export class CartPageComponent {
   constructor(private product:ProductsService, private router:Router){}
 
   ngOnInit() {
+    this.loadCartData()
+  }
 
+  checkout(){
+    if(localStorage.getItem('user')) {      
+      this.router.navigate(["/checkout"])
+    }else{
+      alert("Please Login To Checkout!")
+      this.router.navigate(["/user-auth"])
+    }
+  }
+
+  removeFromCart(cartId:number|undefined){
+    if(!localStorage.getItem('user')){
+      cartId && this.product.removeItemFromCart(cartId)
+    }else{
+      let userData = localStorage.getItem('user')
+      let userId = userData && JSON.parse(userData).id
+      cartId && this.product.removeFromCartRemote(cartId)
+      .subscribe((result)=>{
+        if(result){
+          this.product.getCartList(userId)
+        }
+      })
+    }
+    this.loadCartData()
+  }
+
+  loadCartData(){
+    let delivery=0
     if(localStorage.getItem('user')) {
       this.product.currentCart().subscribe((result)=>{
         if(result.length){
-          this.delivery=40
+          delivery=40
         }
         this.currentCartData = result 
         this.cartItems = result.length
@@ -42,8 +70,8 @@ export class CartPageComponent {
           price:price,
           discount:price*5/100,
           tax:price*12/100,
-          delivery:this.delivery,
-          total:+((price)+(price*12/100)+(this.delivery)-(price*5/100)).toFixed()
+          delivery:delivery,
+          total:+((price)+(price*12/100)+(delivery)-(price*5/100)).toFixed()
         }
       })      
     }
@@ -51,7 +79,7 @@ export class CartPageComponent {
     // get count of local cart on initialization
     let cartData = localStorage.getItem('localCart');
     if (cartData) {
-      this.delivery = 40
+      delivery = 40
       this.currentCartData = JSON.parse(cartData)
       this.cartItems = JSON.parse(cartData).length;
       let price = 0;
@@ -62,22 +90,25 @@ export class CartPageComponent {
           }
         })
       }
-        this.priceSummary={
-          price:price,
-          discount:price*5/100,
-          tax:price*12/100,
-          delivery:this.delivery,
-          total:+((price)+(price*12/100)+(this.delivery)-(price*5/100)).toFixed()
-        }
-    }    
-  }
-
-  checkout(){
-    if(localStorage.getItem('user')) {      
-      this.router.navigate(["/checkout"])
-    }else{
-      alert("Please Login To Checkout!")
-      this.router.navigate(["/user-auth"])
+      this.priceSummary={
+        price:price,
+        discount:price*5/100,
+        tax:price*12/100,
+        delivery:delivery,
+        total:+((price)+(price*12/100)+(delivery)-(price*5/100)).toFixed()
+      }
+    }else if(!cartData){
+      delivery = 0
+      this.currentCartData = undefined
+      this.cartItems = 0
+      let price = 0;
+      this.priceSummary={
+        price:price,
+        discount:price*5/100,
+        tax:price*12/100,
+        delivery:delivery,
+        total:+((price)+(price*12/100)+(delivery)-(price*5/100)).toFixed()
+      }
     }
   }
 

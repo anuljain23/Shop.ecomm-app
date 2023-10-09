@@ -7,16 +7,19 @@
                     <div class="section-title mb-3">
                         <h4>Cart Items({{ cartItems }})</h4>
                     </div>
+                    <div *ngIf="cartItems === 0">
+                        <h6>Your cart is empty!</h6>
+                    </div>
                     <div class="single-product" *ngFor="let item of currentCartData">
                         <div class="product-wrapper shadow mb-2">
                             <ul class="product-list">
                                 <li>
-                                    <a *ngIf="item.productId" routerLink="/details/{{item.productId}}">
+                                    <a *ngIf="!item.id" routerLink="/details/{{item.productId}}">
                                         <img class="cart-product-img"
                                             src="{{item.productImage}}"
                                             alt="{{item.productImage}}" />
                                     </a>
-                                    <a *ngIf="!item.productId" routerLink="/details/{{item.id}}">
+                                    <a *ngIf="item.id" routerLink="/details/{{item.id}}">
                                         <img class="cart-product-img"
                                             src="{{item.productImage}}"
                                             alt="{{item.productImage}}" />
@@ -26,7 +29,10 @@
                                 <li><span>Price : &#8377;{{item.productPrice}}</span></li>
                                 <li><span>Quantity : {{item.quantity}}</span></li>
                                 <li>
-                                    <button class="btn btn-custom-info-inverse btn-sm m-2">
+                                    <button *ngIf="item.id" class="btn btn-custom-info-inverse btn-sm m-2" (click)="removeFromCart(item.id)">
+                                        Remove From Cart
+                                    </button>
+                                    <button *ngIf="!item.id" class="btn btn-custom-info-inverse btn-sm m-2" (click)="removeFromCart(item.productId)">
                                         Remove From Cart
                                     </button>
                                 </li>
