@@ -69,6 +69,16 @@
       "id": 1
     },
     {
+      "productName": "Galaxy F34 5G",
+      "productCategory": "Mobile Phones",
+      "productPrice": "24499",
+      "productColor": "Green",
+      "productDescription": "Galaxy F34 5G (64GB RAM)",
+      "sellerId": 1,
+      "productImage": "https://www.dgl.ru/wp-content/uploads/2023/07/dm0.jpg",
+      "id": 2
+    },
+    {
       "productName": "MacBook Pro",
       "productCategory": "Laptops",
       "productPrice": "129999",
