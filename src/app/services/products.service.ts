@@ -121,4 +121,8 @@ export class ProductsService {
     return this.http.delete(this.ordersAPIUrl+"/"+orderId)
   }
 
+  productsByCategory(name:string){
+    return this.http.get<Product[]>(this.productAPIUrl+`?productCategory=${name}`)
+  }
+
 }

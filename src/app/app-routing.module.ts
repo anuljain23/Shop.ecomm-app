@@ -13,6 +13,7 @@ import { UserAuthComponent } from './MyComponents/user-auth/user-auth.component'
 import { CartPageComponent } from './MyComponents/cart-page/cart-page.component';
 import { CheckoutComponent } from './MyComponents/checkout/checkout.component';
 import { MyOrdersComponent } from './MyComponents/my-orders/my-orders.component';
+import { CategoryComponent } from './MyComponents/category/category.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:"cart-page",component:CartPageComponent},
   {path:"checkout",component:CheckoutComponent},
   {path:"my-orders",component:MyOrdersComponent},
+  {path:"category/:name",component:CategoryComponent},
 ];
 
 @NgModule({
